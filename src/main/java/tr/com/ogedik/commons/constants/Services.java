@@ -24,6 +24,7 @@ public final class Services {
         public static final String CREATE_LOG = "/worklog";
         public static final String ISSUES_IN_SPRINT = "/issues-in-sprint";
         public static final String BOARDS = "/boards";
+        public static final String SPRINTS = "/sprints";
 
         // Authentication Paths
         public static final String AUTHENTICATE = "/authenticate";
