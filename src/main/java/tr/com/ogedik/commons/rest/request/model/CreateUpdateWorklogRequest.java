@@ -13,7 +13,7 @@ import java.util.Date;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class CreateWorklogRequest implements BusinessObject {
+public class CreateUpdateWorklogRequest implements BusinessObject {
     private String issueKey;
     private String comment;
     private Date started;

@@ -21,7 +21,7 @@ public final class Services {
         public static final String TEST_CONNECTION = "/jira/connect";
         public static final String JIRA_USER = "jira/user";
         public static final String LOGGED_ISSUES = "/logged-issues";
-        public static final String CREATE_LOG = "/worklog";
+        public static final String WORKLOG = "/worklog";
         public static final String ISSUES_IN_SPRINT = "/issues-in-sprint";
         public static final String BOARDS = "/boards";
         public static final String SPRINTS = "/sprints";
