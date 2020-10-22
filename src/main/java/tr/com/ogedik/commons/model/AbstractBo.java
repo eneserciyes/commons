@@ -6,9 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.SuperBuilder;
 
-/**
- * @author orkun.gedik
- */
+/** @author orkun.gedik */
 @Getter
 @Setter
 @SuperBuilder
@@ -16,6 +14,5 @@ import lombok.experimental.SuperBuilder;
 @NoArgsConstructor
 public abstract class AbstractBo implements BusinessObject {
 
-    private MetaInformation metaInformation;
-
+  private MetaInformation metaInformation;
 }

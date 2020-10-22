@@ -8,16 +8,16 @@ import tr.com.ogedik.commons.model.BusinessObject;
 import tr.com.ogedik.commons.model.JiraUser;
 
 /*
-*
-* @author enes.erciyes
-*/
+ *
+ * @author enes.erciyes
+ */
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 public class Fields implements BusinessObject {
-    private String summary;
-    private Worklog worklog;
-    private Sprint sprint;
-    private JiraUser assignee;
+  private String summary;
+  private Worklog worklog;
+  private Sprint sprint;
+  private JiraUser assignee;
 }

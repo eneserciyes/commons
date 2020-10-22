@@ -5,16 +5,15 @@ import tr.com.ogedik.commons.model.BusinessObject;
 
 import java.util.List;
 
-
 /*
-*
-* @author enes.erciyes
-* */
+ *
+ * @author enes.erciyes
+ * */
 
 @Getter
 public class JQLSearchResult implements BusinessObject {
-    int maxResults;
-    int startAt;
-    int total;
-    List<Issue> issues;
+  int maxResults;
+  int startAt;
+  int total;
+  List<Issue> issues;
 }

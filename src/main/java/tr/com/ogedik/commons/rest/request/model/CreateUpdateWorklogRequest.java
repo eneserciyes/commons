@@ -14,9 +14,9 @@ import java.util.Date;
 @AllArgsConstructor
 @Builder
 public class CreateUpdateWorklogRequest implements BusinessObject {
-    private long id;
-    private String issueKey;
-    private String comment;
-    private Date started;
-    private int timeSpentSeconds;
+  private long id;
+  private String issueKey;
+  private String comment;
+  private Date started;
+  private int timeSpentSeconds;
 }

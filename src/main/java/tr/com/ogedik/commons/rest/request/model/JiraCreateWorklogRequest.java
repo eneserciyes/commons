@@ -15,10 +15,11 @@ import java.util.Date;
 @AllArgsConstructor
 @Builder
 public class JiraCreateWorklogRequest implements BusinessObject {
-    private String comment;
-    private WorklogVisibility visibility;
-    @JsonFormat
-            (shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss.SSSZ")
-    private Date started;
-    private int timeSpentSeconds;
+  private String comment;
+  private WorklogVisibility visibility;
+
+  @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss.SSSZ")
+  private Date started;
+
+  private int timeSpentSeconds;
 }

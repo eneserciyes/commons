@@ -7,35 +7,32 @@ import lombok.Setter;
 
 import java.util.Map;
 
-/**
- * @author orkun.gedik
- */
+/** @author orkun.gedik */
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 public class JiraUser {
 
-    private String http;
+  private String http;
 
-    private String key;
+  private String key;
 
-    private String name;
+  private String name;
 
-    private String emailAddress;
+  private String emailAddress;
 
-    private String displayName;
+  private String displayName;
 
-    private String active;
+  private String active;
 
-    private String deleted;
+  private String deleted;
 
-    private String timeZone;
+  private String timeZone;
 
-    private String locale;
+  private String locale;
 
-    private String size;
+  private String size;
 
-    private Map<String ,String> avatarUrls;
-
+  private Map<String, String> avatarUrls;
 }

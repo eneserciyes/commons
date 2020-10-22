@@ -14,7 +14,7 @@ import tr.com.ogedik.commons.model.BusinessObject;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Board implements BusinessObject {
-    private long id;
-    private String name;
-    private String type;
+  private long id;
+  private String name;
+  private String type;
 }

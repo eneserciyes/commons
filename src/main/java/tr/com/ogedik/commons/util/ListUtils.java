@@ -17,8 +17,8 @@ import java.util.function.Supplier;
 public class ListUtils {
 
   /**
-   * Returns an immutable empty list if the argument is {@code null},
-   * or the argument itself otherwise.
+   * Returns an immutable empty list if the argument is {@code null}, or the argument itself
+   * otherwise.
    *
    * @param <T> the element type
    * @param list the list, possibly {@code null}
@@ -29,28 +29,33 @@ public class ListUtils {
   }
 
   /**
-   * Merges all elements of multiple lists into a single list. Does not allow duplication in the final list. Uses
-   * {@link SingularList} to prevent duplication during object insertion to the list. This method uses in the following
-   * situation: Let 'superVar' an object and 'subVar' is a {@link List} field in the superVar. Also, let 'subSubVar'
-   * another {@link List} field in the subVar which is also a list field in 'superVar'. This method returns all elements
-   * in 'subSubVar' field.
+   * Merges all elements of multiple lists into a single list. Does not allow duplication in the
+   * final list. Uses {@link SingularList} to prevent duplication during object insertion to the
+   * list. This method uses in the following situation: Let 'superVar' an object and 'subVar' is a
+   * {@link List} field in the superVar. Also, let 'subSubVar' another {@link List} field in the
+   * subVar which is also a list field in 'superVar'. This method returns all elements in
+   * 'subSubVar' field.
    *
-   * @param <T>  the element type
+   * @param <T> the element type
    * @param list the first {@link List} in the field hierarchy
    * @param path path of second {@link List} to retrieve all elements of the list.
    * @return merged {@link List} of object
    */
-  public static <T> List<?> mergeNested(final List<T> list, String path) throws IllegalAccessException {
+  public static <T> List<?> mergeNested(final List<T> list, String path)
+      throws IllegalAccessException {
     List<Object> singularList = new SingularList<>();
 
     for (T object : emptyIfNull(list)) {
       Field[] fields = object.getClass().getDeclaredFields();
-      Field field = Arrays.stream(fields)
-          .filter(o -> path.equals(o.getName()))
-          .findFirst()
-          .orElseThrow(() -> new ErrorException(CommonErrorType.INTERNAL_ERROR, path + " is not exist."));
+      Field field =
+          Arrays.stream(fields)
+              .filter(o -> path.equals(o.getName()))
+              .findFirst()
+              .orElseThrow(
+                  () ->
+                      new ErrorException(CommonErrorType.INTERNAL_ERROR, path + " is not exist."));
       field.setAccessible(true);
-      List<?> values = (List<?>)field.get(object);
+      List<?> values = (List<?>) field.get(object);
       singularList.addAll(values);
     }
 

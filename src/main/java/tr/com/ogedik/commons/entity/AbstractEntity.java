@@ -9,25 +9,18 @@ import javax.persistence.MappedSuperclass;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
-/**
- * @author orkun.gedik
- */
+/** @author orkun.gedik */
 @MappedSuperclass
 @Getter
 @Setter
 @ToString
 public class AbstractEntity implements Serializable {
 
-    @Column
-    private LocalDateTime createdAt;
+  @Column private LocalDateTime createdAt;
 
-    @Column
-    private String createdBy;
+  @Column private String createdBy;
 
-    @Column
-    private LocalDateTime updatedAt;
+  @Column private LocalDateTime updatedAt;
 
-    @Column
-    private String updatedBy;
-
+  @Column private String updatedBy;
 }

@@ -6,9 +6,7 @@ import lombok.Setter;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 
-/**
- * @author orkun.gedik
- */
+/** @author orkun.gedik */
 @Getter
 @Setter
 @AllArgsConstructor

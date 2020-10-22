@@ -6,16 +6,14 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import tr.com.ogedik.commons.model.BusinessObject;
 
-/**
- * @author orkungedik
- */
+/** @author orkungedik */
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
 public class Session implements BusinessObject {
 
-    private String name;
+  private String name;
 
-    private String value;
+  private String value;
 }

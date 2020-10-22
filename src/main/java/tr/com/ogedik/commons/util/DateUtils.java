@@ -38,6 +38,7 @@ public class DateUtils {
     Date max = convertCalendarDateString(endDate + "T23:59:59");
     Date started = convertWorklogDateString(worklogRecord.getStarted());
 
-    return (started.after(min) | started.equals(min)) && (started.before(max) | started.equals(max));
+    return (started.after(min) | started.equals(min))
+        && (started.before(max) | started.equals(max));
   }
 }

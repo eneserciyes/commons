@@ -10,9 +10,7 @@ import tr.com.ogedik.commons.util.ListUtils;
 import java.util.List;
 import java.util.stream.Collectors;
 
-/**
- * @author orkun.gedik
- */
+/** @author orkun.gedik */
 public abstract class AbstractBoMapper<I extends AbstractBo, O extends AbstractEntity> {
 
   public abstract I convert(O entity);
@@ -20,7 +18,9 @@ public abstract class AbstractBoMapper<I extends AbstractBo, O extends AbstractE
   public abstract O convert(I model);
 
   public List<I> convert(List<O> entities) {
-    return ListUtils.emptyIfNull(entities).stream().map(entity -> convert(entity)).collect(Collectors.toList());
+    return ListUtils.emptyIfNull(entities).stream()
+        .map(entity -> convert(entity))
+        .collect(Collectors.toList());
   }
 
   @AfterMapping

@@ -2,13 +2,11 @@ package tr.com.ogedik.commons.annotation;
 
 import java.lang.annotation.*;
 
-/**
- * @author orkun.gedik
- */
+/** @author orkun.gedik */
 @Retention(RetentionPolicy.RUNTIME)
-@Target({ ElementType.FIELD })
+@Target({ElementType.FIELD})
 @Documented
 public @interface NotNull {
 
-    String message() default "Field cannot be null.";
+  String message() default "Field cannot be null.";
 }

@@ -15,14 +15,12 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
-/**
- * @author orkun.gedik
- */
+/** @author orkun.gedik */
 public class MandatoryFieldValidator implements Validator {
 
   public static MandatoryFieldValidator instance;
 
-  private MandatoryFieldValidator() { }
+  private MandatoryFieldValidator() {}
 
   public static MandatoryFieldValidator getInstance() {
     if (instance == null) {
@@ -50,12 +48,15 @@ public class MandatoryFieldValidator implements Validator {
     for (Field field : fields) {
       field.setAccessible(true);
 
-      Optional<Annotation> notNullAnnotation = Arrays.stream(field.getDeclaredAnnotations())
-          .filter(annotation -> annotation instanceof NotNull)
-          .findFirst();
+      Optional<Annotation> notNullAnnotation =
+          Arrays.stream(field.getDeclaredAnnotations())
+              .filter(annotation -> annotation instanceof NotNull)
+              .findFirst();
 
       if (notNullAnnotation.isPresent()) {
-        errorMessages = retrieveMissingFieldValues(field, object, ((NotNull)notNullAnnotation.get()).message());
+        errorMessages =
+            retrieveMissingFieldValues(
+                field, object, ((NotNull) notNullAnnotation.get()).message());
       }
     }
 
@@ -71,7 +72,8 @@ public class MandatoryFieldValidator implements Validator {
    * @param object instance of an object to validate
    * @param message exception message
    */
-  private List<ErrorMessage> retrieveMissingFieldValues(Field field, Object object, String message) {
+  private List<ErrorMessage> retrieveMissingFieldValues(
+      Field field, Object object, String message) {
     List<ErrorMessage> errorMessages = new ArrayList<>();
     Object value = getObject(field, object);
 

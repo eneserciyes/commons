@@ -14,8 +14,8 @@ import tr.com.ogedik.commons.model.BusinessObject;
 @NoArgsConstructor
 @AllArgsConstructor
 public class JiraResponse implements BusinessObject {
-    private int maxResults;
-    private int startAt;
-    private int total;
-    private boolean isLast;
+  private int maxResults;
+  private int startAt;
+  private int total;
+  private boolean isLast;
 }

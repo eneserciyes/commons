@@ -14,7 +14,6 @@ import tr.com.ogedik.commons.model.BusinessObject;
 @AllArgsConstructor
 @NoArgsConstructor
 public class WorklogVisibility implements BusinessObject {
-    String type;
-    String value;
-
+  String type;
+  String value;
 }

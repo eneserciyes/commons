@@ -16,5 +16,5 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 public class BoardsResponse extends JiraResponse {
-    private List<Board> values;
+  private List<Board> values;
 }

@@ -14,18 +14,12 @@ import tr.com.ogedik.commons.expection.constants.CommonErrorType;
 import tr.com.ogedik.commons.expection.model.ErrorMessage;
 import tr.com.ogedik.commons.rest.request.client.helper.RequestURLDetails;
 import tr.com.ogedik.commons.rest.response.RestResponse;
-import tr.com.ogedik.commons.constants.Headers;
-import tr.com.ogedik.commons.constants.Services;
-import tr.com.ogedik.commons.rest.request.client.helper.RequestURLDetails;
-import tr.com.ogedik.commons.rest.response.RestResponse;
 
 import java.util.Collections;
 import java.util.Map;
 import java.util.Objects;
 
-/**
- * @author orkun.gedik
- */
+/** @author orkun.gedik */
 public class HttpRestClient {
 
   public static <T> RestResponse<T> doGet(
@@ -114,22 +108,34 @@ public class HttpRestClient {
         response.getStatusCodeValue());
   }
 
-    public static <T> ResponseEntity<T> exchange(RestContainer restContainer, @NonNull HttpMethod httpMethod,
-                                                 @Nullable Class<T> responseType) {
-        try {
-            return restContainer.getRestTemplate().exchange(restContainer.getUrl(), httpMethod, restContainer.getRequest(), getResponseType(responseType));
-        } catch (HttpClientErrorException e) {
-            CommonErrorType errorType;
+  public static <T> ResponseEntity<T> exchange(
+      RestContainer restContainer,
+      @NonNull HttpMethod httpMethod,
+      @Nullable Class<T> responseType) {
+    try {
+      return restContainer
+          .getRestTemplate()
+          .exchange(
+              restContainer.getUrl(),
+              httpMethod,
+              restContainer.getRequest(),
+              getResponseType(responseType));
+    } catch (HttpClientErrorException e) {
+      CommonErrorType errorType;
 
-            if (e.getRawStatusCode() == 401) {
-                errorType = CommonErrorType.JIRA_AUTHENTICATION_ERROR;
-            } else {
-                errorType = CommonErrorType.JIRA_ACCESS_ERROR;
-            }
+      if (e.getRawStatusCode() == 401) {
+        errorType = CommonErrorType.JIRA_AUTHENTICATION_ERROR;
+      } else {
+        errorType = CommonErrorType.JIRA_ACCESS_ERROR;
+      }
 
-            throw new ErrorException(ErrorMessage.builder().status(errorType.getStatus()).detail(errorType.getTitle()).build());
-        }
+      throw new ErrorException(
+          ErrorMessage.builder()
+              .status(errorType.getStatus())
+              .detail(errorType.getTitle())
+              .build());
     }
+  }
 
   private static <T> Class<T> getResponseType(@Nullable Class<T> responseType) {
     if (Objects.nonNull(responseType)) {

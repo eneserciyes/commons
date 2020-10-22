@@ -17,5 +17,5 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 public class SprintResponse extends JiraResponse {
-    private List<Sprint> values;
+  private List<Sprint> values;
 }

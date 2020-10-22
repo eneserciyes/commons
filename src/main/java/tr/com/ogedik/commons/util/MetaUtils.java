@@ -8,9 +8,7 @@ import tr.com.ogedik.commons.model.MetaInformation;
 import java.time.LocalDateTime;
 import java.util.List;
 
-/**
- * @author orkun.gedik
- */
+/** @author orkun.gedik */
 public class MetaUtils {
 
   /**
@@ -19,7 +17,8 @@ public class MetaUtils {
    * @param bos to be filled List<{@link AbstractBo}>
    * @param authenticatedUsername request owner
    */
-  public static <T extends AbstractBo> void fillMetaList(List<T> bos, String authenticatedUsername) {
+  public static <T extends AbstractBo> void fillMetaList(
+      List<T> bos, String authenticatedUsername) {
     if (bos == null || bos.isEmpty()) {
       throw new ErrorException(CommonErrorType.INVALID_INPUT, "Request body must not be null");
     }

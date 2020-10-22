@@ -5,9 +5,7 @@ import lombok.experimental.UtilityClass;
 import java.util.Optional;
 import java.util.function.Supplier;
 
-/**
- * @author orkun.gedik
- */
+/** @author orkun.gedik */
 @UtilityClass
 public class ObjectUtils {
 

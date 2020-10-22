@@ -9,8 +9,8 @@ import java.util.List;
 @Getter
 @Setter
 public class Worklog implements BusinessObject {
-    private int startAt;
-    private int maxResults;
-    private int total;
-    private List<WorklogRecord> worklogs;
+  private int startAt;
+  private int maxResults;
+  private int total;
+  private List<WorklogRecord> worklogs;
 }

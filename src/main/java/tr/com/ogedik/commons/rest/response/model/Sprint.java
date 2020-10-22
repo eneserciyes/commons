@@ -13,8 +13,8 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Sprint {
-    private long id;
-    private String name;
-    private String startDate;
-    private String endDate;
+  private long id;
+  private String name;
+  private String startDate;
+  private String endDate;
 }

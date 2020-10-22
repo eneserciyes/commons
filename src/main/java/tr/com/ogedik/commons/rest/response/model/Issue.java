@@ -1,9 +1,9 @@
 package tr.com.ogedik.commons.rest.response.model;
 
 /*
-*
-* @author enes.erciyes
-* */
+ *
+ * @author enes.erciyes
+ * */
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -16,9 +16,9 @@ import tr.com.ogedik.commons.model.BusinessObject;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Issue implements BusinessObject {
-    private long id;
-    private String key;
-    private String description;
-    private Fields fields;
-    private String summary;
+  private long id;
+  private String key;
+  private String description;
+  private Fields fields;
+  private String summary;
 }
