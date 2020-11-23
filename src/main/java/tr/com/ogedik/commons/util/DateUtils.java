@@ -6,6 +6,7 @@ import tr.com.ogedik.commons.rest.response.model.WorklogRecord;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 
 public class DateUtils {
@@ -14,6 +15,8 @@ public class DateUtils {
       new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSZ");
   private static final SimpleDateFormat calendarDateFormat =
       new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
+  private static final SimpleDateFormat timelessDateFormat =
+          new SimpleDateFormat("yyyy-MM-dd");
 
   public static Date convertWorklogDateString(String worklogDate) {
     try {
@@ -21,6 +24,15 @@ public class DateUtils {
     } catch (ParseException e) {
       throw new ErrorException(
           CommonErrorType.INTERNAL_ERROR, "Date string cannot be parsed to Date object");
+    }
+  }
+
+  public static Date convertTimelessDateString(String date){
+    try {
+      return timelessDateFormat.parse(date);
+    } catch (ParseException e) {
+      throw new ErrorException(
+              CommonErrorType.INTERNAL_ERROR, "Date string cannot be parsed to Date object");
     }
   }
 
@@ -40,5 +52,35 @@ public class DateUtils {
 
     return (started.after(min) | started.equals(min))
         && (started.before(max) | started.equals(max));
+  }
+
+  public static int getWorkingDaysBetweenTwoDates(Date startDate, Date endDate) {
+    Calendar startCal = Calendar.getInstance();
+    startCal.setTime(startDate);
+
+    Calendar endCal = Calendar.getInstance();
+    endCal.setTime(endDate);
+
+    int workDays = 0;
+
+    //Return 0 if start and end are the same
+    if (startCal.getTimeInMillis() == endCal.getTimeInMillis()) {
+      return 0;
+    }
+
+    if (startCal.getTimeInMillis() > endCal.getTimeInMillis()) {
+      startCal.setTime(endDate);
+      endCal.setTime(startDate);
+    }
+
+    do {
+      //excluding start date
+      startCal.add(Calendar.DAY_OF_MONTH, 1);
+      if (startCal.get(Calendar.DAY_OF_WEEK) != Calendar.SATURDAY && startCal.get(Calendar.DAY_OF_WEEK) != Calendar.SUNDAY) {
+        ++workDays;
+      }
+    } while (startCal.getTimeInMillis() < endCal.getTimeInMillis()); //excluding end date
+
+    return workDays;
   }
 }
