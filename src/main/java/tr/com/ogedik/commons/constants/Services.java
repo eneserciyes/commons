@@ -26,6 +26,7 @@ public final class Services {
     public static final String ISSUES_IN_SPRINT = "/issues-in-sprint";
     public static final String BOARDS = "/boards";
     public static final String SPRINTS = "/sprints";
+    public static final String SPRINT = "/sprint";
     public static final String ISSUES = "/issues";
 
     // Authentication Paths
