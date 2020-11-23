@@ -8,6 +8,7 @@ public final class Services {
   public static final String INTEGRATION = "integration";
   public static final String API_GATEWAY = "api-gateway";
   public static final String TIME_TRACKER = "time-tracker";
+  public static final String NOTIFICATION = "notification";
 
   public static class Path {
 
