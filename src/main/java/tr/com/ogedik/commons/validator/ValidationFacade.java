@@ -8,6 +8,6 @@ import java.util.Arrays;
 public abstract class ValidationFacade<T extends BusinessObject> {
 
   public void validate(T validationRequest, Validator<T>... validators) {
-    Arrays.asList(validators).stream().forEach(validator -> validator.validate(validationRequest));
+    Arrays.stream(validators).forEach(validator -> validator.validate(validationRequest));
   }
 }

@@ -17,6 +17,7 @@ public final class Services {
     // Integration paths
     public static final String JIRA_AUTH = "/jira/auth";
     public static final String TEST_CONNECTION = "/jira/connect";
+    public static final String TEST_MAIL = "/jira/connectMail";
     public static final String JIRA_USER = "jira/user";
     public static final String LOGGED_ISSUES = "/logged-issues";
     public static final String WORKLOG = "/worklog";
