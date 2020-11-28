@@ -41,5 +41,6 @@ public final class Services {
 
     // Retrieve Worklog Paths
     public static final String WORKLOGS = "/worklogs";
+    public static final String INDIVIDUAL_REPORT = "/individual-report";
   }
 }
