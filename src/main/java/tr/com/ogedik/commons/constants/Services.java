@@ -21,6 +21,7 @@ public final class Services {
     public static final String TEST_MAIL = "/jira/connectMail";
     public static final String SEND_MAIL = "/jira/sendMail";
     public static final String JIRA_USER = "jira/user";
+    public static final String USER_SEARCH = "jira/user/search";
     public static final String LOGGED_ISSUES = "/logged-issues";
     public static final String WORKLOG = "/worklog";
     public static final String ISSUES_IN_SPRINT = "/issues-in-sprint";
@@ -43,5 +44,6 @@ public final class Services {
     public static final String WORKLOGS = "/worklogs";
     public static final String INDIVIDUAL_REPORT = "/individual-report";
     public static final String DAILY_CHART = "/daily-chart";
+
   }
 }
